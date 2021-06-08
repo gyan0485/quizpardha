@@ -200,31 +200,137 @@ header * {
     box-shadow: 0px 0px 6px 3px rgba(0,0,0,.1);
 }
 /* === End CSS for Header section === */
-
-/* === CSS for Banner section === */
-#banner-section {
+html {
+    height: 100%;
+  }
+  
+  body {
+    height: 100%;
+    position: relative;
+  }
+  body:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
     width: 100%;
-    background-image: url(../images/banner-bg.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: right center;
-    margin-top: 70px;
-    padding: 60px 0;
-}
-#banner-section h1 {
-    margin: 0 0 20px 0;
-    font-size: 48px;
+    background-color: #2a5555;
+    opacity: 0.7;
+    z-index: 1;
+  }
+  
+  video.bg-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 0;
+  }
+.masthead {
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .masthead:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+  .masthead .masthead-content {
+    position: relative;
+    max-width: 40rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .masthead .masthead-content h1, .masthead .masthead-content .h1 {
+    font-size: 2.5rem;
+  }
+  .masthead .masthead-content p {
+    font-size: 1.2rem;
+  }
+  .masthead .masthead-content p strong {
     font-weight: 700;
-    line-height: 56px;
-    color: #048bcc;
-}
-#banner-section .hero-img img {
-    width: 70%;
-    max-width: 600px;
-    margin: 0 auto;
-    display: block;
-}
-/* === End CSS for Banner section === */
+  }
+  .masthead .masthead-content .input-group-newsletter input {
+    height: auto;
+    width: 100%;
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  .masthead .masthead-content .input-group-newsletter button {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: calc(1rem + 2px);
+  }
+  
+  @media (min-width: 992px) {
+    .masthead {
+      height: 100%;
+      width: 75vw;
+      min-height: 0;
+      padding-bottom: 0;
+    }
+    .masthead:before {
+      transform: skewX(-9deg);
+      transform-origin: top right;
+    }
+    .masthead .masthead-content {
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 2rem;
+      padding-right: 9rem;
+    }
+    .masthead .masthead-content h1, .masthead .masthead-content .h1 {
+      font-size: 3.5rem;
+    }
+    .masthead .masthead-content p {
+      font-size: 1.3rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    .masthead {
+      width: 65vw;
+    }
+  }
+  .social-icons {
+    position: relative;
+    z-index: 2;
+  }
+  .social-icons .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 100rem;
+  }
+  
+  @media (min-width: 992px) {
+    .social-icons {
+      position: absolute;
+      height: 100%;
+      top: 0;
+      right: 2.5rem;
+      width: auto;
+    }
+  }
 
 /* === CSS for Footer section === */
 #footer {
@@ -661,105 +767,3 @@ header * {
 }
 
 /* === End CSS for Custom Animation === */
-
-
-section {
-    padding: 60px 0;
-    overflow: hidden;
-}
-.section-bg {
-    background-color: #f3f3f3;
-}
-.section-title {
-    text-align: center;
-    padding-bottom: 30px;
-}
-.section-title h2 {
-    font-size: 42px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    padding-bottom: 0;
-    color: #627680;
-}
-.duties .icon-box {
-    padding: 30px;
-    position: relative;
-    overflow: hidden;
-    margin: 15px 0;
-    background: #fff;
-    box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
-    transition: all 0.3s ease-in-out;
-    border-radius: 12px;
-    text-align: center;
-    border-bottom: 3px solid #fff;
-}
-.duties .icon-box-cyan .icon i {
-    color: #3fcdc7;
-}
-.duties .icon i {
-    font-size: 48px;
-    line-height: 1;
-    margin-bottom: 15px;
-}
-.duties .title {
-    font-weight: 700;
-    margin-bottom: 15px;
-    font-size: 18px;
-}
-.duties .description {
-    font-size: 15px;
-    line-height: 28px;
-    margin-bottom: 0;
-}
-.duties .icon-box-blue:hover {
-    border-color: #2282ff;
-}
-.duties .icon-box-blue .icon i {
-    color: #2282ff;
-}
-.duties .icon-box-pink:hover {
-    border-color: #ff689b;
-}
-.duties .icon-box-pink .icon i {
-    color: #ff689b;
-}
-.duties .icon-box-cyan:hover {
-    border-color: #3fcdc7;
-}
-.duties .icon-box-cyan .icon i {
-    color: #3fcdc7;
-}
-.duties .icon-box-green:hover {
-    border-color: #41cf2e;
-}
-.duties .icon-box-green .icon i {
-    color: #41cf2e;
-}
-.duties .icon-box-orange:hover {
-    border-color: #41cf2e;
-}
-.duties .icon-box-orange .icon i {
-    color: #ecae3b;
-}
-.duties .icon-box-red:hover {
-    border-color: #fd1414;
-}
-.duties .icon-box-red .icon i {
-    color: #fd1414;
-}
-.duties .icon-box-violet:hover {
-    border-color: #6e00ff;
-}
-.duties .icon-box-violet .icon i {
-    color: #6e00ff;
-}
-.duties .icon-box-darkPink:hover {
-    border-color: #9c009e;
-}
-.duties .icon-box-darkPink .icon i {
-    color: #9c009e;
-}
-
-.duties .icon-box:hover {
-    transform: translateY(-5px);
-}
